@@ -39,6 +39,7 @@ export function createGame(seed = null) {
     score: 0,
     pendingEvent: null,
     pendingSettlement: null,
+    intro: true,
     camps: 0,
     eventsResolved: 0,
     tradesMade: 0,

@@ -36,6 +36,7 @@ export function bootstrap(seed = null) {
         overlay.classList.remove('active');
         overlay.setAttribute('hidden', '');
       }
+      game.setState ? game.setState({ intro: false }) : game.getState().intro = false;
       render();
       initMap();
     });
@@ -157,6 +158,12 @@ function render() {
   const state = game.getState();
   renderStatusBar(state);
   updateMap(state);
+
+  if (state.intro) {
+    const intro = find('#intro-overlay');
+    if (intro) intro.classList.add('active');
+    return;
+  }
 
   if (state.over) {
     showEnd(game);
