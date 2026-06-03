@@ -7,7 +7,19 @@ let markerGroup = null;
 
 export function initMap() {
   const el = document.getElementById('map');
-  if (!el || typeof L === 'undefined') return;
+  if (!el) return;
+  if (typeof L === 'undefined') {
+    const elLeaflet = document.querySelector('script[src*="leaflet"]');
+    if (!elLeaflet) return;
+    if (elLeaflet.complete || elLeaflet.readyState === 'complete' || elLeaflet.readyState === 'loaded') {
+      if (typeof L === 'undefined') return;
+    } else {
+      elLeaflet.addEventListener('load', () => {
+        if (el && typeof L !== 'undefined') initMap();
+      }, { once: true });
+      return;
+    }
+  }
   if (map) return;
 
   applyTheme(el);

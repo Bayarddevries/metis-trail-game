@@ -3,6 +3,11 @@ import { applyTheme } from './theme.js';
 export function mount() {
   const gameRoot = document.getElementById('game-root');
   if (!gameRoot) throw new Error('#game-root missing');
+  let container = gameRoot.querySelector('#game-container');
+  if (!container) {
+    container = createShell().root;
+    gameRoot.appendChild(container);
+  }
   applyTheme(gameRoot);
   return gameRoot;
 }

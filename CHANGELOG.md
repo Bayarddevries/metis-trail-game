@@ -2,22 +2,24 @@
 
 All notable changes are documented here. Format loosely follows Keep a Changelog.
 
-## 2026-06-03 — Initial clean repo (metis-trail-game)
+## 2026-06-03 — Cleanup and consolidation
 
 ### Added
-- Clean repo created at `metis-trail-game`, forked from `metis-trail-v2`
-- All core game code: `src/core`, `src/data`, `src/systems`, `src/ui`
-- esbuild bundler in `scripts/build.mjs`
+- All core game code under `src/core`, `src/data`, `src/systems`, `src/ui`
 - GitHub Actions Pages deploy workflow
-- `data/` folder with source research from v1 repo
-- README, CHANGELOG, .gitignore
+- Historical research archive under `research/` and `data/`
+- Legacy plans and audit snapshots under `legacy-docs/`
+- README, TODO, ISSUES, CHANGELOG restored from v2 repository history
+- Issue templates under `.github/ISSUE_TEMPLATE/`
+- Preview and playtest helpers under `scripts/`
 
-### Removed (from v2 clutter)
-- `.claude/` impeccable skill (80+ files — not game-related)
-- Raw research scrapes (moved to `metis-research-wiki`)
-- Stale build artifacts (`docs/`, multiple `app.v*.js`, trigger files)
-- `node_modules/`
+### Fixed
+- GitHub Pages enabled with GitHub Actions source
+- CI workflow pinned and stabilized (pnpm workflow, esbuild/vitest versions)
 
-### Notes
-- v2 source: https://github.com/Bayarddevries/metis-trail-v2
-- v1 site: https://bayarddevries.github.io/metis-trail/
+### Changed
+- Remaining build artifacts, lockfiles, and workspace configs cleaned up
+- Docs unified under single live URL: https://bayarddevries.github.io/metis-trail-game/
+
+## Notes
+- v1 site baseline: https://bayarddevries.github.io/metis-trail/

@@ -1,41 +1,28 @@
 # Métis Trail
 
-An educational web game about the 1878 Carlton Trail journey — built with vanilla ESM, esbuild, and Vitest. Offline-first, no framework, single-page output.
+An educational web game about the 1878 Métis Carlton Trail journey — historically grounded, offline-first, and optimized for mobile browsers.
 
 **Live:** https://bayarddevries.github.io/metis-trail-game/
 
-## About
-
-Travel the Carlton Trail from Fort Garry (Winnipeg) toward Fort Edmonton in 1878. Manage supplies, navigate hazards, make choices, and encounter historically-grounded events drawn from primary sources. Every event and location is sourced.
-
-This is a short browser game focused on getting the game loop right. A larger, more ambitious game is a separate future project.
-
 ## Repo layout
 
-| Path | Purpose |
-|------|---------|
-| `src/main.js` | Browser entry point + bootstrap |
-| `src/systems/` | Game logic (engine, events, scoring, travel) |
-| `src/ui/` | Rendering, overlays, theme, persistence, debug |
-| `src/data/` | Game data — nodes, items, events, source citations |
-| `src/core/` | Constants, calendar, PRNG, schema |
-| `scripts/build.mjs` | esbuild bundler → `dist/app.js` + `dist/index.html` |
-| `data/` | Source research material (KML, CSV, reference text) |
-| `.github/workflows/deploy.yml` | GitHub Pages deploy on push to `main` |
+- `src/` — game source: core, systems, UI, data
+- `scripts/` — build + run helpers
+- `data/` — research references and map assets
+- `research/` — archived primary-source research copies from earlier builds
+- `legacy-docs/` — superseded plans, audits, and sample HTML snapshots
+- `docs/` — supplementary notes and older session docs
 
-## Working on the game
+## How to contribute
 
-1. Read this file, then `CHANGELOG.md` for recent work
-2. Make changes in `src/` — **do not touch `dist/` directly**
-3. Build: `npm run build` → open `dist/index.html` in a browser
-4. Conventional commits only
+1. Start with `TODO.md` and `ISSUES.md` before editing anything.
+2. Edit files under `src/`. Do not edit `dist/`.
+3. Use `pnpm run build` and verify before pushing.
+4. Follow conventional commits.
+5. Every historical claim needs a citation in `src/data/sources/`. If it can't be sourced, mark it `TODO`.
 
-### Rules
+## Non-negotiables
 
-- Offline-first: final output must work without a server
-- Every historical claim needs a source citation. If you can't cite one, mark it as a `TODO`
-- Never overwrite the established tone without explicit direction
-
-## Historical sources
-
-All game content is rooted in primary-source research. Source citations accompany nodes and events. The research wiki lives at **bayarddevries/metis-research-wiki** — raw research, source documents, and historical analysis. This repo's `data/` folder holds reference copies of key source material for close-at-hand use during development.
+- Offline-first output
+- Mobile-friendly first
+- Historical accuracy over invention
