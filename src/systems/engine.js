@@ -357,6 +357,7 @@ export function createGame(seed = null) {
         score: S.score,
         pendingEvent: S.pendingEvent,
         pendingSettlement: S.pendingSettlement,
+        intro: S.intro,
       };
     },
     getCart() {
